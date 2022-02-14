@@ -1,0 +1,67 @@
+방명록 만들기
+
+-- -------------------------------------------------------------------------	
+
+1. 어디에 저장 - MariaDB
+
+-- -------------------------------------------------------------------------	
+
+2. 무엇을 저장
+
+	작성자
+	비밀번호
+	내용
+	작성일
+	ip
+	
+-- -------------------------------------------------------------------------	
+	
+3. 테이블을 만들자 -- db에서 다음의 작업을 수행하자
+	create table guestbook(
+		idx int primary key auto_increment,
+		name varchar(30) not null,
+		password varchar(50) not null,
+		content text not null,
+		regDate timestamp default now(),
+		ip varchar(20) not null
+	);
+	
+	desc guestbook;
+
+	-- 샘플로 데이터를 3개만 넣어보자
+	insert into guestbook
+		(name, password, content, ip)
+	values
+		('김곤도', password('1234'), '방명록입니다. 인사말을 남겨주세요','192.168.0.55'),
+		('최동오', password('1234'), '방명록이구나. 흔적을 남기겠습니다.','192.168.0.55'),
+		('곤도', password('1234'), '잘 보고 갑니다.','192.168.0.55');
+		
+	select * from guestbook;
+	
+-- -------------------------------------------------------------------------	
+	
+4. 패키지 3개를 만든다.
+
+	kr.green.guest.vo
+	kr.green.guest.dao
+	kr.green.guest.service
+	
+-- -------------------------------------------------------------------------	
+	
+5. kr.green.vo 에 클래스 2개를 만든다.
+============================================================================
+
+GuestBookVO.java
+
+@Data
+@XmlRootElement		// JAXB:XML로 출력할 수 있도록
+public class GuestBookVO {
+	private int    idx;
+	private String name;
+	private String password;
+	private String content;
+	private Date   regDate;
+	private String ip;
+}
+
+-- -------------------------------------------------------------------------
