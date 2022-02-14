@@ -26,7 +26,7 @@ h1 {
 	font-size: 94pt;
 	border: 3px solid gray;
 	text-align: center;
-	background-image: url(head01.png);
+	background-image: url(./images/head01.png);
 	/* 	head.png_580*180 */
 	background-size: auto;
 	margin: inherit;
