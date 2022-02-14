@@ -1,0 +1,147 @@
+
+------------------------------------------------------------------------------------
+
+
+								자료실 		만들기
+
+
+------------------------------------------------------------------------------------
+
+
+1. 어디에 저장할까? -- mariaDB
+
+
+2. 무엇을 저장할까? 
+	이름 , 비번 , 제목 , 내용 , 날짜 , ip , 첨부파일 , ...
+	
+	
+3. 어떻게 저장할까? 
+		
+	원본글 저장		: fileBoard 
+		키필드		-- idx 		-- int
+		이름		-- name		-- varchar
+		비번		-- password	-- varchar
+		제목		-- subject	-- varchar
+		내용		-- content	-- text
+		작성일		-- regDate	-- timestamp
+		아이피		-- ip		-- varchar
+		
+	첨부파일 저장	: boardFile
+		키필드		-- idx		-- int
+		참조		-- ref		-- int
+		원본파일명	-- oriName	-- varchar
+		저장파일	-- saveName -- varchar
+		
+		
+4. 테이블을 만들자
+	create table fileBoard(
+	idx int primary key auto_increment,
+	name varchar(50) not null,
+	password varchar(50) not null,
+	subject varchar(100) not null,
+	content text not null,
+	regDate timestamp default now(),
+	ip varchar(15) not null,
+	);
+	
+	create table boardFile(
+	idx int primary key auto_increment,
+	ref int not null,
+	oriName varchar(100) not null,
+	saveName varchar(100) not null,
+	);
+	
+	
+5. 패키지 3개를 만들자
+	kr.green.file.service
+	kr.green.file.dao
+	kr.green.file.vo
+	
+	
+6. VO를 클래스 3개를 만들자
+	FileBoardVO.java	
+	BoardFileVO.java	
+	PagingVO.java	
+	
+	
+7. 마이바티스 설정 파일에 타입을 등록하고 맵퍼파일을 추가한다.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 프로퍼티 파일 이름 지정 -->
+	<properties resource="db.properties"></properties>
+	<!-- VO를 만들때마다 1개씩 추가해라 -->
+	<typeAliases>
+		<typeAlias type="kr.green.file.vo.BoardFileVO" alias="BoardFileVO"/>
+		<typeAlias type="kr.green.file.vo.FileBoardVO" alias="FileBoardVO"/>
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${m.driver}" />
+				<property name="url" value="${m.url}" />
+				<property name="username" value="${m.username}" />
+				<property name="password" value="${m.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 매퍼파일 만들때 마다 추가하라 -->
+	<mappers>
+		<mapper resource="mapper/testMapper.xml" />
+		<mapper resource="mapper/boardMapper.xml" />
+		<mapper resource="mapper/fileMapper.xml" />
+	</mappers>
+</configuration>
+	
+	
+8. 맵퍼 파일에 SQL명령을 등록한다.
+	boardMapper.xml
+	fileMapper.xml
+	
+	
+9. 맵퍼 파일을 참조하여 DAO와 DAOImpl을 만든다.
+	FileBoardDAO.java
+	FileBoardImpl.java
+	
+	
+10. 서비스 클래스를 만들자
+	FileBoardService.java
+	FileBoardServiceImpl.java
+	
+	
+11.	출력을 담당하는 jsp파일을 만들자
+	index.jsp
+	view.jsp
+	insert.jsp
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
