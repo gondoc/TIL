@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>memberpageUpdate</title>
@@ -23,6 +26,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
+<!-- jquery 3.3.1-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function passwordCheck() {
 		var p1 = document.getElementById('password').value;
@@ -76,14 +81,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Calendar</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Calculator</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="login.jsp">login</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="logout.jsp">logout</a></li>
-					<!-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="memberpageUpdate.jsp">My Page</a></li> -->
-					<%-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" onclick="loginCheck()" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%></a></li> --%>
 				</ul>
-
 			</div>
 		</div>
 	</nav>
