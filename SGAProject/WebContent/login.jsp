@@ -45,8 +45,6 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
-<!-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="Main.jsp">Main</a></li> -->
-<!-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp">login</a></li> -->
 				</ul>
 			</div>
 		</div>
@@ -92,6 +90,7 @@
 					<a href="findpasswordForm.jsp">비밀번호 찾기</a>
 				</div>
 			</form>
+			<br />
 			<!-- Optional JavaScript -->
 			<Script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 			<Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -160,5 +159,7 @@
 						});
 			</script>
 			<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+			</div>
+			</header>
 </body>
 </html>
