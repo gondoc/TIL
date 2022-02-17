@@ -54,8 +54,9 @@ if(nickName == null){
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Calendar</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Calculator</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Calendar">Calendar</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Calculator">Calculator</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Trainer">Trainer</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="login.jsp">login</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="logout.jsp">logout</a></li>
 <!-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="memberpageUpdate.jsp">My Page</a></li> -->
@@ -83,7 +84,7 @@ if(nickName == null){
 		</div>
 	</header>
 	<!-- Portfolio Section-->
-	<section class="page-section" id="contact">
+	<section class="page-section" id="Calendar">
 		<div class="container">
 			<!-- Contact Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Calendar</h2>
@@ -115,7 +116,8 @@ if(nickName == null){
 			</div>
 		</div>
 	</section>
-	<section class="page-section portfolio" id="portfolio">
+	<!-- Portfolio Section-->
+	<section class="page-section portfolio" id="Calculator">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">BMI CALCULATOR</h2>
@@ -136,7 +138,7 @@ if(nickName == null){
 		</div>
 	</section>
 	<!-- Portfolio Section-->
-	<section class="page-section portfolio" id="portfolio">
+	<section class="page-section portfolio" id="Trainer">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Trainer</h2>
