@@ -16,6 +16,7 @@ if (foundId == "") {
 	out.println("<script>alert('고객님의 아이디는 " + foundId + "입니다.');</script>");
 	out.println("<script>window.open('login.jsp');</script>");
 }
+
 // 		response.sendRedirect("login.jsp");
 %>
 <!DOCTYPE html>
