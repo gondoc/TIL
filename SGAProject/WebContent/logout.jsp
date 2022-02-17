@@ -3,14 +3,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>logout</title>
 </head>
 <body>
 	<%
 	session.invalidate();
-	out.println("<script>alert('로그아웃되었습니다'); history.back();</script>");
 	response.sendRedirect("Main.jsp");
 	%>
-	
 </body>
 </html>
