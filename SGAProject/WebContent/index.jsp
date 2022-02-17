@@ -14,17 +14,14 @@ response.setDateHeader("Expires",0);
 <html>
 <head>
 <title>CaptCha 예제2</title>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Imagetoolbar" content="no" />
-<script type="text/javascript"
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript">
 var rand;
-
 
 //캡차 오디오 요청
 function audioCaptcha() {
@@ -57,12 +54,9 @@ function changeCaptcha() {
 }
 
 $(document).ready(function() {
-	
 	changeCaptcha(); //캡차 이미지 요청
-	
 	$('#reLoad').click(function(){ changeCaptcha(); }); //새로고침버튼에 클릭이벤트 등록
 	$('#soundOn').click(function(){ audioCaptcha(); });	//음성듣기버튼에 클릭이벤트 등록
-	
 	//확인 버튼 클릭시
 	$('#frmSubmit').click(function(){
 		if ( !$('#answer').val() ) {
@@ -86,20 +80,12 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-
 var check = false;
 
-
-
 function clearInput(){
-
-
 	var el = document.getElementById('answer');
-	
 	el.value = "";
-	
 }
-
 
 </script>
 
@@ -114,16 +100,10 @@ function btnDisabled()  {
 <body>
 	<div id="catpcha"></div>
 	<div id="audiocatpch" style="display: none;"></div>
-
-	<input id="reLoad" class="reLoad" name="reLoad" type="button" value="새로고침" onclick="clearInput()"/>
-	
+	<input id="reLoad" class="reLoad" name="reLoad" type="button" value="새로고침" onclick="clearInput()" />
 	<input id="soundOn" type="button" value="음성듣기" />
 	<br />
-
-	
 	<input type="text" id="answer" class="answer" name="answer" value="" autofocus="autofocus" />
-	
 	<input type="button" id="frmSubmit" value="확인">
-
 </body>
 </html>
