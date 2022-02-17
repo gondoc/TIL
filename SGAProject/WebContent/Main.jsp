@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <%
@@ -6,11 +7,10 @@
 String id = (String) session.getAttribute("id");
 String nickName = (String) session.getAttribute("nickName");
 
-if(nickName == null){
+if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 	nickName = "";
 }
 %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <title>SGAProject</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -28,19 +28,24 @@ if(nickName == null){
 		loginCheck()
 	});
 	var str = "${nickName}";
-	
+
 	function loginCheck() {
-		if(str!=""){
-// 			display:none 속성을 지워 마이페이지를 나타나게 한다.
+		if (str != "") { // 넘어온 값이 공백이 아니라면 == 값이 있다면
+			// display:none 속성을 지워 상단 로그아웃 버튼, 마이페이지${nickName}버튼을 나타나게 한다.
+			$('a#logout').removeAttr('style');
 			$('a#myPage').removeAttr('style');
-		}		
+		} else { // 공백이라면 == 값이 없다면
+			$('a#login').removeAttr('style');
+		}
 	}
 	
-	
-// 	function loginCheck() {
-// 		}
-// 		login.jsp
-// 	}
+	function logoutCheck() {
+		if(confirm('로그아웃 하시겠습니까?')) {
+			alert('정상 로그아웃 되었습니다.');
+			location.href="logout.jsp";
+		}
+		return false;
+	}
 </script>
 <head>
 </head>
@@ -57,10 +62,9 @@ if(nickName == null){
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Calendar">Calendar</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Calculator">Calculator</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Trainer">Trainer</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="login.jsp">login</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="logout.jsp">logout</a></li>
-<!-- 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="1" href="memberpageUpdate.jsp">My Page</a></li> -->
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" onclick="loginCheck()" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%></a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="login" style="display: none;" href="login.jsp">login</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%>'s page</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="logout" style="display: none;" onclick="logoutCheck()">logout</a></li>
 				</ul>
 
 			</div>
@@ -368,7 +372,8 @@ if(nickName == null){
 	<!-- Portfolio Modal 4-->
 
 	<!-- Bootstrap core JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+</script>
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -376,5 +381,6 @@ if(nickName == null){
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
 </body>
 </html>
