@@ -5,6 +5,10 @@
 	request.setCharacterEncoding("utf-8");
 String id = (String) session.getAttribute("id");
 String nickName = (String) session.getAttribute("nickName");
+
+if(nickName == null){
+	nickName = "";
+}
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <title>SGAProject</title>
@@ -23,11 +27,10 @@ String nickName = (String) session.getAttribute("nickName");
 	$(window).on("load", function() {
 		loginCheck()
 	});
-	
-	var <%=nickName%>;
+	var str = "${nickName}";
 	
 	function loginCheck() {
-		if(<%=nickName%>!=""){
+		if(str!=""){
 // 			display:none 속성을 지워 마이페이지를 나타나게 한다.
 			$('a#myPage').removeAttr('style');
 		}		
