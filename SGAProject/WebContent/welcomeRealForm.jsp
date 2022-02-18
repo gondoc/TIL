@@ -120,7 +120,7 @@
 					<tr>
 						<td id="title">본인확인 질문</td>
 						<td>
-							<select name="me">
+							<select name="me" style="width: 185px;">
 								<option value="">본인확인질문</option>
 								<option value="01">보물 1호는?</option>
 								<option value="02">내가 태어난 지역은?</option>
