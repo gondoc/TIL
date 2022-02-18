@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Calc</title>
+<title>BMICalc</title>
 <style type="text/css">
-	#heightbar, #weightbar{
-		width: 200px;
-	}
+#heightbar, #weightbar {
+	width: 200px;
+}
 </style>
 <script type="text/javascript">
 	var check = 0;
@@ -61,29 +60,7 @@
 		document.getElementById("weightbar").value = "";
 	}
 	
-	
-// 	//getBMI
-// 	function getBMI(){
-// 		var result = heightbar + weightbar;
-// 		if(result%.2f>=25) { 
-// 			// BMI수치가 25보다 크다면
-// 			alert("BMI지수는 " + result%.2f + "이며\n비만도 결과는 비만입니다.");
-// 			// BMI수치가 23보다 크다면
-// 		}else if (result>=23) {
-// 			alert("BMI지수는 " + result%.2f + "이며\n비만도 결과는 과체중입니다.");
-// 			// BMI수치가 18.5보다 크다면
-// 		}else if (result>=18.5) {
-// 			alert("BMI지수는 " + result%.2f + "이며\n비만도 결과는 정상입니다.");
-// 			// BMI수치가 그 나머지 값이라면
-// 		}else {
-// 			alert("BMI지수는 " + result%.2f + "이며\n비만도 결과는 저체중입니다.");
-// 		}
-// 		return;
-// 	}
-	
 	function getBMI(result){
-// 		hp = 0;
-// 		result = document.getElementById("weightbar").value / (document.getElementById("heightbar").value*document.getElementById("heightbar").value);
 		hp = document.getElementById("heightbar").value/100;
 		result = Math.floor((document.getElementById("weightbar").value/ (hp * hp))*10)/10;
 		if (result>=25) { 
@@ -99,7 +76,6 @@
 		}else {
 			alert("BMI지수는 " + result + "이며\n비만도 결과는 저체중입니다.");
 		}
-// 		alert(result);
 	}
 </script>
 </head>
@@ -111,44 +87,76 @@
 			</tr>
 			<tr>
 				<td colspan="4" style="vertical-align: middle; text-align: center;">
-					성별 : 
-					<input type="radio" value="man" id="gender" name="gender" checked="checked">남자 &nbsp;
-					<input type="radio" value="woman" id="gender" name="gender">여자
+					성별 :
+					<input type="radio" value="man" id="gender" name="gender" checked="checked">
+					남자 &nbsp;
+					<input type="radio" value="woman" id="gender" name="gender">
+					여자
 				</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="text-align: center">
-					신장 : <input type="text" id="heightbar" name="heightbar" readonly="readonly"/>
+					신장 :
+					<input type="text" id="heightbar" name="heightbar" readonly="readonly" />
 				</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="text-align: center">
-					체중 : <input type="text" id="weightbar" name="weightbar" readonly="readonly"/>
+					체중 :
+					<input type="text" id="weightbar" name="weightbar" readonly="readonly" />
 				</td>
 			</tr>
 			<tr>
-				<td><input type="button" value="C" id="c" name="c" onClick="Clear()"/></td>
-				<td><input type="button" id="remove" value=" ← "/></td>
+				<td>
+					<input type="button" value="C" id="c" name="c" onClick="Clear()" />
+				</td>
+				<td>
+					<input type="button" id="remove" value=" ← " />
+				</td>
 			</tr>
 			<tr>
-				<td><input type="button" value="7" id="7" name="7" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="8" id="8" name="8" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="9" id="9" name="9" onClick="ClickNum(this.id)"/></td>
+				<td>
+					<input type="button" value="7" id="7" name="7" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="8" id="8" name="8" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="9" id="9" name="9" onClick="ClickNum(this.id)" />
+				</td>
 			</tr>
 			<tr>
-				<td><input type="button" value="4" id="4" name="4" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="5" id="5" name="5" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="6" id="6" name="6" onClick="ClickNum(this.id)"/></td>
+				<td>
+					<input type="button" value="4" id="4" name="4" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="5" id="5" name="5" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="6" id="6" name="6" onClick="ClickNum(this.id)" />
+				</td>
 			</tr>
 			<tr>
-				<td><input type="button" value="1" id="1" name="1" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="2" id="2" name="2" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="3" id="3" name="3" onClick="ClickNum(this.id)"/></td>
+				<td>
+					<input type="button" value="1" id="1" name="1" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="2" id="2" name="2" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="3" id="3" name="3" onClick="ClickNum(this.id)" />
+				</td>
 			</tr>
 			<tr>
-				<td><input type="button" value="타겟 변경" id="target" name="target" onclick="ChangeMode()"/></td>
-				<td><input type="button" value="0" id="0" name="0" onClick="ClickNum(this.id)"/></td>
-				<td><input type="button" value="결과 확인" id="result" name="result" onclick="getBMI()"/></td>
+				<td>
+					<input type="button" value="타겟 변경" id="target" name="target" onclick="ChangeMode()" />
+				</td>
+				<td>
+					<input type="button" value="0" id="0" name="0" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="결과 확인" id="result" name="result" onclick="getBMI()" />
+				</td>
 			</tr>
 		</table>
 	</form>
