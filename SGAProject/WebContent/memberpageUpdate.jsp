@@ -6,6 +6,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+
 <title>memberpageUpdate</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -49,8 +50,8 @@
 	margin-left: -260px;
 }
 
-#h1_test {
-	text-align: center
+#h1_test { 
+	text-align: center;
 }
 
 #hr_test {
@@ -63,7 +64,7 @@
 	text-align: center;
 }
 
-#div_test {
+#div_test { 
 	background-color: green;
 	width: 400px;
 	padding: 50px;
