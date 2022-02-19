@@ -1,6 +1,6 @@
 package kr.green.login.vo;
 
-public class SearchVO<Stirng> {
+public class SearchVO {
 	private String result;
 	
 	public SearchVO(String result) {
