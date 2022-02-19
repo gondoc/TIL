@@ -181,7 +181,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-						<img class="img-fluid" src="image/1.jpg" alt="..." />
+						<img class="img-fluid" src="image/trainer_1.jpg" alt="..." />
 					</div>
 				</div>
 				<!-- Portfolio Item 2-->
@@ -192,7 +192,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-						<img class="img-fluid" src="image/2.jpg" alt="..." />
+						<img class="img-fluid" src="image/trainer_2.jpg" alt="..." />
 					</div>
 				</div>
 				<!-- Portfolio Item 3-->
@@ -203,7 +203,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-						<img class="img-fluid" src="image/3.jpg" alt="..." style="height: 45%" />
+						<img class="img-fluid" src="image/trainer_3.jpg" alt="..." style="height: 45%" />
 					</div>
 				</div>
 
