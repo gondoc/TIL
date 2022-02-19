@@ -6,7 +6,7 @@
 <%@page import="org.apache.ibatis.session.SqlSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String id = (String) session.getAttribute("id");
+String id = (String) session.getAttribute("id");
 String name = (String) session.getAttribute("name");
 String nickName = (String) session.getAttribute("nickName");
 String phone = (String) session.getAttribute("phone");
@@ -42,25 +42,14 @@ div#Main {
 <body class="container">
 	<div class="jumbotron">
 		<h1>Welcome</h1>
-
 		<%
-			request.setCharacterEncoding("utf-8");
-
-		// 	String id = request.getParameter("id");
-		// 	String password = request.getParameter("password");
-
-		// 	int idx = LoginServiceImpl.getInstance().selectIdx(id, password);
-		// 	MemberVO vo = LoginServiceImpl.getInstance().getMember(idx);
-		// 	nickName = LoginServiceImpl.getInstance().memberLogin(vo);
-
+		request.setCharacterEncoding("utf-8");
 		session.setAttribute("nickName", nickName);
-		// 	session.setAttribute("id", id);
-		// 	response.sendRedirect("Main.jsp");
 		%>
 		<p><%=nickName%>님 반갑습니다.
 		</p>
 		<div id=Main>
-			<a href="Main.jsp" class="btn btn-primary btn-success">메인페이지 접속</a>
+			<a href="Main.jsp" class="btn btn-success button-lg">메인페이지 접속</a>
 		</div>
 	</div>
 	<!-- Optional JavaScript -->
