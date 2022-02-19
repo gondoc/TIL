@@ -23,6 +23,8 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 <link href="css/styles.css" rel="stylesheet" />
 <!-- jquery 3.3.1-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- google icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script type="text/javascript">
 	$(window).on("load", function() {
 		loginCheck()
@@ -38,15 +40,26 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 			$('a#login').removeAttr('style');
 		}
 	}
-	
+
 	function logoutCheck() {
-		if(confirm('로그아웃 하시겠습니까?')) {
+		if (confirm('로그아웃 하시겠습니까?')) {
 			alert('정상 로그아웃 되었습니다.');
-			location.href="logout.jsp";
+			location.href = "logout.jsp";
 		}
 		return false;
 	}
 </script>
+<style>
+#tothetop {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 4px;
+	background-color: white;
+}
+</style>
 <head>
 </head>
 <body id="page-top">
@@ -63,7 +76,8 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Calculator">Calculator</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Trainer">Trainer</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="login" style="display: none;" href="login.jsp">login</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%>'s page</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%>'s page
+						</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="logout" style="display: none;" onclick="logoutCheck()">logout</a></li>
 				</ul>
 
@@ -71,21 +85,24 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 		</div>
 	</nav>
 	<!-- Masthead-->
-	<header class="masthead bg-success bg-opacity-25 text-white text-center">
-		<div class="container d-flex align-items-center flex-column">
-			<!-- Masthead Avatar Image-->
-			<jsp:include page="Search/SearchBar.jsp" />
-			<!-- Masthead Heading-->
-			<!-- Icon Divider-->
-			<div class="divider-custom divider-light">
-				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon">
-					<i class="fas fa-star"></i>
+	<header class="masthead bg-success bg-opacity-25 text-uppercase text-center" id="searchBar">
+			<div class="container d-flex align-items-center flex-column">
+			<section class="page-section" id="searchBar">
+				<!-- Masthead Avatar Image-->
+				<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Search</h2>
+				<!-- Icon Divider-->
+				<div class="divider-custom divider-light">
+					<div class="divider-custom-line"></div>
+					<div class="divider-custom-icon">
+						<i class="fas fa-star"></i>
+					</div>
+					<div class="divider-custom-line"></div>
 				</div>
-				<div class="divider-custom-line"></div>
-			</div>
-			<!-- Masthead Subheading-->
+				<jsp:include page="Search/SearchBar.jsp" />
+				<!-- Masthead Heading-->
+			</section>
 		</div>
+			<!-- Masthead Subheading-->
 	</header>
 	<!-- Portfolio Section-->
 	<section class="page-section" id="Calendar">
@@ -286,7 +303,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image-->
-								<img class="img-fluid rounded mb-5" src="image/1.jpg" alt="..." />
+								<img class="img-fluid rounded mb-5" src="image/trainer_1.jpg" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">트레이너 김영숙</p>
 								<p>경력 : 10년
@@ -321,7 +338,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image-->
-								<img class="img-fluid rounded mb-5" src="image/2.jpg" alt="..." />
+								<img class="img-fluid rounded mb-5" src="image/trainer_2.jpg" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">트레이너 김영삼</p>
 								<p>경력 : 15년차</p>
@@ -356,7 +373,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image-->
-								<img class="img-fluid rounded mb-5" src="image/3.jpg" alt="..." />
+								<img class="img-fluid rounded mb-5" src="image/trainer_3.jpg" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">트레이너 : 다니엘</p>
 								<p>경력 : 5년차</p>
@@ -369,11 +386,16 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 			</div>
 		</div>
 	</div>
-	<!-- Portfolio Modal 4-->
+	<a href="#searchBar" id="tothetop">
+		<img class="material-icons-outlined" src="image/up.png" />
+	</a>
 
+	<!-- 	<span class="material-icons-outlined"> keyboard_arrow_up </span> -->
+	<!-- Portfolio Modal 4-->
 	<!-- Bootstrap core JS-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
-</script>
+		
+	</script>
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -381,6 +403,5 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
 </body>
 </html>
