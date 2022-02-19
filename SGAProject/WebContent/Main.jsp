@@ -78,7 +78,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="login" style="display: none;" href="login.jsp">login</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="myPage" style="display: none;" href="memberpageUpdate.jsp"><%=nickName%>'s page
 						</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="logout" style="display: none;" onclick="logoutCheck()">logout</a></li>
+					<li class="nav-item mx-0 mx-lg-1" style="cursor: pointer;"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="logout" style="display: none; cursor: Pointer;" onclick="logoutCheck()">logout</a></li>
 				</ul>
 			</div>
 		</div>
