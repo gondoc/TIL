@@ -46,13 +46,11 @@
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
 			<form action="findIDOkForm.jsp" method="post">
-
 				<div id="findID">
 					<p style="font-size: 20pt; font-weight: bold">아이디 찾기</p>
 					<br>
 				</div>
 				<table>
-
 					<tr>
 						<td>이메일</td>
 						<td>
@@ -60,7 +58,6 @@
 						</td>
 						<td></td>
 					</tr>
-
 					<tr>
 						<td>이름</td>
 						<td>
@@ -69,21 +66,19 @@
 						<td></td>
 						<td></td>
 					</tr>
-
 					<tr>
 						<td>전화번호</td>
 						<td>
 							<input type="text" name="phone" maxlength="11" placeholder="-없이 입력바랍니다.">
 						</td>
 					</tr>
-
 				</table>
-
-				<br> <br> <br>
-
+				<br>
+				<br>
 				<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn">확인</button>
-
 				<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn" onclick="window.open('login.jsp');">취소</button>
 			</form>
+		</div>
+	</header>
 </body>
 </html>
