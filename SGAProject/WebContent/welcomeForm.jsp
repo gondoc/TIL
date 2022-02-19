@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +13,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -55,6 +55,9 @@ label {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="Main.jsp">Main</a></li>
+
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp">login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,8 +65,12 @@ label {
 	<header class="masthead text-white text-center">
 		<div class="container d-flex align-items-center flex-column"></div>
 	</header>
+	<!-- Masthead-->
+	<!-- Masthead Avatar Image-->
 	<h1>회원가입</h1>
-	<div class="container d-flex flex-column">
+
+	<div class="container d-flex flex-column" style="padding-top: 1rem;">
+
 		<div class="flex-center" style="padding-top: 1rem;">
 			<p>* 개인정보 수집·이용 동의 (필수)</p>
 			<textarea id="privacy_scroll" style="resize: none; width: 100%; height: 20rem; padding: 0.5rem;" readonly>
@@ -255,23 +262,21 @@ SGAProject 서비스에는 기본적으로 본 약관이 적용됩니다만, 부
 2018년 5월 1일
 SGAProject 서비스와 관련하여 궁금하신 사항이 있으시면 고객센터(대표번호: 1588 – 0000/ 평일 09:00~18:00)로 문의 주시기 바랍니다.
 		</textarea>
-
+		
 			<label for="agree2"> <input type="checkbox" id="agree2" name="agree2" value="1"> <span>위 내용을 읽었으며, 동의합니다.<strong>(필수)</strong></span>
-			</label> <label for="agree_all"> <input type="checkbox" name="agree_all" id="agree_all"> <span>모두 동의합니다</span> <br />
+			</label> <label for="agree_all"> <input type="checkbox" name="agree_all" id="agree_all"> <span>모두 동의합니다</span> <br/>
 			</label>
 		</div>
 	</div>
 	<div style="text-align: center;">
 		<div id="btn-group" class="btn-group" aria-label="Basic example" style="display: inline-block;">
 			<form action="welcomeRealForm.jsp" method="post" onSubmit="return CheckForm(this)">
-				<button type="submit" id="nextBtn" class="btn btn-success btn-sm d-grid gap-2 mx-auto text-center">다음</button>
-				<br>
+				<button type="submit" id="nextBtn" class="btn btn-success btn-sm d-grid gap-2 mx-auto text-center">다음</button> <br>
 			</form>
 		</div>
 		<div id="btn-group" class="btn-group" aria-label="Basic example" style="display: inline-block;">
 			<form action="login.jsp" method="post">
-				<button type="submit" class="btn btn-success btn-sm d-grid gap-2 mx-auto text-center">취소</button>
-				<br>
+				<button type="submit" class="btn btn-success btn-sm d-grid gap-2 mx-auto text-center">취소</button> <br>
 			</form>
 		</div>
 	</div>
