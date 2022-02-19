@@ -80,7 +80,6 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 						</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="logout" style="display: none;" onclick="logoutCheck()">logout</a></li>
 				</ul>
-
 			</div>
 		</div>
 	</nav>
@@ -213,6 +212,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 	<!-- About Section-->
 	<section class="page-section bg-primary text-white mb-0" id="about">
 		<div class="container">
+
 			<!-- About Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-white">Review</h2>
 			<!-- Icon Divider-->
@@ -224,7 +224,10 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- About Section Content-->
+
+
 			<div class="row">
+
 				<div class="col-lg-4 ms-auto">
 					<p class="lead">트레이너와 전화 혹은 문자를 통해 자세한 내용에 대해서는 상담이 가능하구요 ​ 나의 코치를 찾는웹을 통하니 상담받는것도 굉장히 편하고 여러 다양한 정보를 획득한 후 선택한 트레이너는 만족도가 굉장히 높았습니다 ​ 여러분들도 운동웹을 한번 사용해보시면 아주 좋을 것 같네요 ㅎㅎㅎ</p>
 				</div>
@@ -269,6 +272,7 @@ if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
 					<p class="lead mb-0">
 						by team SGVBF
 						<a href="https://github.com/SGABF/SGAFirstExam">github.com</a>
+
 					</p>
 				</div>
 			</div>
