@@ -5,13 +5,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%-- 부트스트랩을 사용하기 위한 준비 시작 --%>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Calc</title>
-<link href="style.css" rel="stylesheet">
+<link href="Calc/style.css" rel="stylesheet">
 <style type="text/css">
 #heightbar, #weightbar {
 	width: 200px;
@@ -79,27 +88,6 @@
 		document.getElementById("heightbar").value = "";
 		document.getElementById("weightbar").value = "";
 	}
-	
-// 	//BMI   
-// 	function getBMI(result){
-// //	       hp = 0;
-// //	       result = document.getElementById("weightbar").value / (document.getElementById("heightbar").value*document.getElementById("heightbar").value);
-// 	      hp = document.getElementById("heightbar").value/100;
-// 	      result = Math.floor((document.getElementById("weightbar").value/(hp * hp))*10)/10; 
-// 	      if (result>=25) { 
-// 	         // BMI수치가 25보다 크다면
-// 	         alert("BMI지수는 " + result + "이며\n비만도 결과는 비만입니다.");
-// 	         // BMI수치가 23보다 크다면
-// 	      }else if (result>=23) {
-// 	         alert("BMI지수는 " + result + "이며\n비만도 결과는 과체중입니다.");
-// 	         // BMI수치가 18.5보다 크다면
-// 	      }else if (result>=18.5) {
-// 	         alert("BMI지수는 " + result + "이며\n비만도 결과는 정상입니다.");
-// 	         // BMI수치가 그 나머지 값이라면
-// 	      }else {
-// 	         alert("BMI지수는 " + result + "이며\n비만도 결과는 저체중입니다.");
-// 	      }
-// 	   }
 
 	//한글자씩 지우기
 		$(function () {
@@ -140,97 +128,106 @@
 </script>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/Calc/BmiResult.jsp" onsubmit="return Check();"
-		method="post">
-		      <table class="bg-success p-2 text-dark bg-opacity-10">
-         <tr>
-            <td colspan="4" style="text-align:center; font-size: 25px;"><div class="d-grid gap-2 col-4 mx-auto">BMI 계산기</div></td>
-         </tr>
-         <tr>
-            <td colspan="4" style="vertical-align: middle; text-align: center;">
-               성별 : 
-               <input type="radio" value="남자" id="gender" name="gender" checked="checked">남자 &nbsp; 
-               <input type="radio" value="여자" id="gender" name="gender">여자
-            </td>
-         </tr>
-         <tr>
-            <td colspan="2" style="text-align: center">신장 : 
-            <input type="text" id="heightbar" name="heightbar" readonly="readonly" class="form-control" placeholder="키(cm)를 입력해주세요 'cm'는 제외." aria-label="default input example" style="width: 400px; text-align: left;" />
-            </td>
-         </tr>
-         <tr>
-            <td colspan="2" style="text-align: center">체중 : 
-            <input type="text" id="weightbar" name="weightbar" readonly="readonly" class="form-control" placeholder="체중(kg)을 입력해주세요 'kg'는 제외." aria-label="default input example" style="width: 400px; text-align: left;" />
-            </td>
-         </tr>
-         <tr>
-            <td><input type="button" value="AC" id="c" name="c" onClick="Clear()" class="btn btn-outline-dark" style="width:200px;"/></td>
-            <td><input type="button" value="Input Change" id="target" name="target" onclick="ChangeMode()" class="btn btn-outline-dark" style="width:200px;"/></td>
-         </tr>
-      </table>
-      <table>
-         <tr>
-            <td>
-               <input type="button" value="7" id="7" name="7" class="btn btn-success" style="width:99px;" onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="8" id="8" name="8" class="btn btn-success" style="width:99px;" onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="9" id="9" name="9" class="btn btn-success" style="width:99px;" onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="+" id="+" name="+" class="btn btn-outline-success" style="width:99px;" onClick="add(this.id)" />
-            </td>
-         </tr>
-      </table>
-      <table>
-         <tr>
-            <td>
-               <input type="button" value="4" id="4" name="4" class="btn btn-success" style="width:99px;"onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="5" id="5" name="5" class="btn btn-success" style="width:99px;"onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="6" id="6" name="6" class="btn btn-success" style="width:99px;"onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="-" id="-" name="-" class="btn btn-outline-success" style="width:99px;"onClick="minus(this.id)" />
-            </td>
-         </tr>
-      </table>
-      <table>
-         <tr>
-            <td>
-               <input type="button" value="1" id="1" name="1" class="btn btn-success" style="width:99px;" onClick="ClickNum(this.id)"/>
-            </td>
-            <td>
-               <input type="button" value="2" id="2" name="2" class="btn btn-success" style="width:99px;"onClick="ClickNum(this.id)" />
-            </td>
-            <td>
-               <input type="button" value="3" id="3" name="3" class="btn btn-success" style="width:99px;"onClick="ClickNum(this.id)" />
-            </td>
-            <td rowspan="2">
-               <button value="maker" id="maker" name="maker" style="width:99px;"class="btn btn-outline-dark" onClick="alert('만든이 : \n이수진 정한결 최동오');">Maker</button>
-            </td>
-         </tr>
-      </table>
-      <table>
-         <tr>
-            <td>
-               <input type="button" value="0" id="0" name="0" class="btn btn-success" onClick="ClickNum(this.id)" style="width:200px;"/>
-            </td>
-            <td>
-               <input type="button" value="Del" id="remove" name="remove" style="width:99px;"class="btn btn-outline-dark">
-            </td>
-            <td>
-               <input type="submit" value="결과" id="result" name="result" class="btn btn-outline-dark" style="width:99px; onClick="Check()"/>
-            </td>
-         </tr>
-      </table>
+	<form action="${pageContext.request.contextPath}/Calc/BmiResult.jsp" onsubmit="return Check();" method="post">
+		<table class="bg-success p-2 text-dark bg-opacity-10">
+			<tr>
+				<td colspan="4" style="text-align: center; font-size: 25px;">
+					<div class="d-grid gap-2 col-4 mx-auto">BMI 계산기</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="vertical-align: middle; text-align: center;">
+					성별 :
+					<input type="radio" value="남성" id="gender" name="gender" checked="checked">
+					남성 &nbsp;
+					<input type="radio" value="여성" id="gender" name="gender">
+					여성
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center">
+					신장 :
+					<input type="text" id="heightbar" name="heightbar" readonly="readonly" class="form-control" placeholder="키(cm)를 입력해주세요 'cm'는 제외." aria-label="default input example" style="width: 400px; text-align: left;" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center">
+					체중 :
+					<input type="text" id="weightbar" name="weightbar" readonly="readonly" class="form-control" placeholder="체중(kg)을 입력해주세요 'kg'는 제외." aria-label="default input example" style="width: 400px; text-align: left;" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="AC" id="c" name="c" onClick="Clear()" class="btn btn-outline-dark" style="width: 200px;" />
+				</td>
+				<td>
+					<input type="button" value="Input Change" id="target" name="target" onclick="ChangeMode()" class="btn btn-outline-dark" style="width: 200px;" />
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="7" id="7" name="7" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="8" id="8" name="8" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="9" id="9" name="9" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="+" id="+" name="+" class="btn btn-outline-success" style="width: 99px;" onClick="add(this.id)" />
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="4" id="4" name="4" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="5" id="5" name="5" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="6" id="6" name="6" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="-" id="-" name="-" class="btn btn-outline-success" style="width: 99px;" onClick="minus(this.id)" />
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="1" id="1" name="1" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="2" id="2" name="2" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td>
+					<input type="button" value="3" id="3" name="3" class="btn btn-success" style="width: 99px;" onClick="ClickNum(this.id)" />
+				</td>
+				<td rowspan="2">
+					<input type="button" value="Maker" id="maker" name="maker" style="width: 99px; height: 80px;" class="btn btn-outline-dark" onClick="alert('만든이 : \n이수진 정한결 최동오');"></input>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="0" id="0" name="0" class="btn btn-success" onClick="ClickNum(this.id)" style="width: 200px;" />
+				</td>
+				<td>
+					<input type="button" value="Del" id="remove" name="remove" style="width: 99px;" class="btn btn-outline-dark">
+				</td>
+				<td>
+					<input type="submit" value="결과" id="result" name="result" class="btn btn-outline-dark" style="width: 99px; height: 80px;" onClick="return Check()"/>
+				</td>
+			</tr>
+		</table>
 	</form>
-	<script type="text/javascript" src="/WebContent/Calc/js/bootstrap.js"></script>
+	<script type="text/javascript" src="Calc/js/bootstrap.js"></script>
 
 </body>
 </html>

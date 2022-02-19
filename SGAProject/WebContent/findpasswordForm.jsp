@@ -1,16 +1,14 @@
 <%@page import="kr.green.login.service.LoginServiceImpl"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
+	request.setCharacterEncoding("utf-8");
 	String id = (String) session.getAttribute("id");
 %>
-
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<title>��й�ȣ ã��</title>
-<%-- ��Ʈ��Ʈ���� ����ϱ� ���� �غ� ���� --%>
+<title>비밀번호 찾기</title>
+<%-- 부트스트랩을 사용하기 위한 준비 시작 --%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -26,7 +24,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<%-- ��Ʈ��Ʈ���� ����ϱ� ���� �غ� �� --%>
+<%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
 <head>
 
 </head>
@@ -52,11 +50,11 @@
 			<form action="findpasswordForm.jsp" method="post">
 				<div id="find password">
 					<input type="hidden" name="uId" value="<%=id%>">
-					<p style="font-size: 20pt; font-weight: bold">��й�ȣ ã��</p>
+					<p style="font-size: 20pt; font-weight: bold">비밀번호 찾기</p>
 					<br>
 					<table>
 						<tr>
-							<td>���̵�&nbsp;</td>
+							<td>아이디&nbsp;</td>
 							<td>
 								<input type="text" name="id" id="id" size="34">
 							</td>
@@ -64,7 +62,7 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td>�̸�&nbsp;</td>
+							<td>이름&nbsp;</td>
 							<td>
 								<input type="text" name="name" id="name" size="34">
 							</td>
@@ -72,21 +70,21 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td>�������&nbsp;</td>
+							<td>생년월일&nbsp;</td>
 							<td>
-								<input type="text" name="birth" maxlength="6" size="34" placeholder="'-'���� ex)910101 �Է¹ٶ��ϴ�.">
+								<input type="text" name="birth" maxlength="6" size="34" placeholder="'-'없이 ex)910101 입력바랍니다.">
 							</td>
 						</tr>
 						<tr>
-							<td>��ȭ��ȣ&nbsp;</td>
+							<td>전화번호&nbsp;</td>
 							<td>
-								<input type="text" name="phone" maxlength="11" placeholder="'-'���� ex)01012345678 �Է¹ٶ��ϴ�." size="34">
+								<input type="text" name="phone" maxlength="11" placeholder="'-'없이 ex)01012345678 입력바랍니다." size="34">
 							</td>
 						</tr>
 					</table>
 					<br> <br>
-					<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn" onclick="window.open('memberPageUpdate3.jsp');">Ȯ��</button>
-					<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn" onclick="window.open('login.jsp');">���</button>
+					<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn" onclick="window.open('memberPageUpdate3.jsp');">확인</button>
+					<button type="submit" class="btn btn-success btn-sm" id="id_confirm_btn" onclick="window.open('login.jsp');">취소</button>
 				</div>
 			</form>
 		</div>
