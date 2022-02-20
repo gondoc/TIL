@@ -46,7 +46,7 @@ div#Main {
 		<p><%=nickName%>님 반갑습니다.
 		</p>
 		<div id=Main>
-			<a href="Main.jsp" class="btn btn-primary btn-success">메인페이지 접속</a>
+			<a href="Main.jsp" class="btn btn-primary btn-success" autofocus>메인페이지 접속</a>
 		</div>
 	</div>
 	<!-- Optional JavaScript -->
