@@ -1,13 +1,12 @@
 <%@page import="kr.green.login.service.LoginServiceImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
 	request.setCharacterEncoding("utf-8");
 String id = (String) session.getAttribute("id");
 %>
 
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <title>비밀번호 찾기</title>
@@ -50,38 +49,33 @@ String id = (String) session.getAttribute("id");
 	<header class="masthead bg-success bg-opacity-25 text-dark text-center">
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<form action="findpasswordForm.jsp" method="post">
-				<div id="find password">
-					<input type="hidden" name="uId" value="<%=id%>">
+			<form action="findPWOkForm.jsp" method="post">
+				<div id="findPW">
 					<p style="font-size: 20pt; font-weight: bold">비밀번호 찾기</p>
 					<br>
 					<table>
 						<tr>
-							<td>아이디&nbsp;</td>
+							<td>아이디</td>
 							<td>
-								<input type="text" name="id" id="id" size="34">
-							</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>이름&nbsp;</td>
-							<td>
-								<input type="text" name="name" id="name" size="34">
-							</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>생년월일&nbsp;</td>
-							<td>
-								<input type="text" name="birth" maxlength="6" size="34" placeholder="'-'없이 ex)910101 입력바랍니다.">
+								<input type="text" name="id" id="id" size="34" placeholder="사용자의 아이디를 입력해주세요">
 							</td>
 						</tr>
 						<tr>
-							<td>전화번호&nbsp;</td>
+							<td>이름</td>
 							<td>
-								<input type="text" name="phone" maxlength="11" placeholder="'-'없이 ex)01012345678 입력바랍니다." size="34">
+								<input type="text" name="name" id="name" size="34" placeholder="ex)홍길동">
+							</td>
+						</tr>
+						<tr>
+							<td>생년월일</td>
+							<td>
+								<input type="text" name="birth" maxlength="6" size="34" placeholder="생년월일 6자리를 입력해주세요">
+							</td>
+						</tr>
+						<tr>
+							<td>전화번호</td>
+							<td>
+								<input type="text" name="phone" maxlength="11" placeholder="'-'없이 입력바랍니다. ex)01012345678" size="34">
 							</td>
 						</tr>
 					</table>
