@@ -27,8 +27,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
-<!-- jquery 3.3.1-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function passwordCheck() {
 		var p1 = document.getElementById('password').value;
@@ -50,22 +48,12 @@
 	margin-left: -260px;
 }
 
-#h1_test { 
+#p_jumbotron {
 	text-align: center;
 }
 
-#hr_test {
-	border: solid 1px gray;
-	width: 200px;
-	margin: 0 auto;
-}
-
-#p_test {
-	text-align: center;
-}
-
-#div_test { 
-	background-color: green;
+#div_jumbotron {
+	background-color: #198754;
 	width: 400px;
 	padding: 50px;
 	margin: 0 auto;
@@ -86,17 +74,25 @@
 			</div>
 		</div>
 	</nav>
-	<div class="jumbotron">
-		<div class="bg-success p-2 text-white" id="div_test">
-			<p id="p_test">
-				회원정보를 안전하게 보호하기 위해<br>비밀번호를 한번 더 확인해주세요.
-			<p id="p_test">
-				비밀번호
-				<input type="password" id="password" autofocus>
-			<form action="memberPageUpdate2.jsp" method="post">
-				<input type="submit" value="확인" class="btn btn-success d-grid gap-2 col-6 mx-auto btn btn-dark btn-sm">
-			</form>
+	<header class="masthead bg-success bg-opacity-25 text-dark text-center">
+		<div class="container d-flex align-items-center flex-column">
+		<form action="passwordOk.jsp" method="post">
+		<div class="jumbotron ">
+
+			<div class="bg-success p-2 text-white" id="div_jumbotron">
+				<p id="p_jumbotron">
+					회원정보를 안전하게 보호하기 위해<br>비밀번호를 한번 더 확인해주세요.
+				<p id="p_jumbotron">
+					<label>비밀번호</label>
+					<input type="password" name="inputPw" autofocus>
+				</p>
+				<button type="submit" class="btn btn-success d-grid gap-2 col-6 mx-auto btn btn-dark btn-sm">확인</button>
+			</div>
 		</div>
+	</form>
 	</div>
+	</header>
 </body>
 </html>
+
+
