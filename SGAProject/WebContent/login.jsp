@@ -2,11 +2,10 @@
 <%@page import="org.apache.ibatis.session.SqlSession"%>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	String id = (String)session.getAttribute("id");
 	String nickName = (String)session.getAttribute("nickName");
-	String foundId = (String)session.getAttribute("foundId");
 %>
 
 <!doctype html>
@@ -19,7 +18,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -32,7 +30,6 @@
 <%-- 부트스트랩을 사용하기 위한 준비 끝 --%>
 <head>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="container" id="page-top">
 
@@ -55,10 +52,10 @@
 			<div class="jumbotron" style="font-weight: bold">
 				<h1 style="text-align: center">login</h1>
 			</div>
-			<!-- 로그인 실패 시 경고: https://getbootstrap.com/docs/4.1/components/alerts/#dismissing -->
+<!-- 			로그인 실패 시 경고: https://getbootstrap.com/docs/4.1/components/alerts/#dismissing -->
 			<%
-				if (request.getParameter("error") != null) {
-			%>
+  				if (request.getParameter("error") != null) { 
+			%> 
 			<div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center">
 				<strong>로그인 에러!</strong> 아이디 또는 비밀번호가 일치하지 않습니다.
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -67,8 +64,8 @@
 			</div>
 			<%
 				}
-			%>
-			<!-- 로그인 폼: https://getbootstrap.com/docs/4.1/components/forms/ -->
+ 			%>
+<!-- 			로그인 폼: https://getbootstrap.com/docs/4.1/components/forms/ -->
 			<form action="loginOk.jsp" method="post">
 				<div class="form-group">
 					<label>아이디</label>
