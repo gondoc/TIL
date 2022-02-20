@@ -28,6 +28,7 @@
 	} else {
 		out.println("<script>alert('로그인 성공');</script>");
 		session.setAttribute("id", id);
+		session.setAttribute("password", password);
 		session.setAttribute("name", vo.getName());
 		session.setAttribute("nickName", nickName);
 		session.setAttribute("phone", vo.getPhone());
