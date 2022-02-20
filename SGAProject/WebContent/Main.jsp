@@ -4,7 +4,6 @@
 <html lang="ko">
 <%
 	request.setCharacterEncoding("utf-8");
-String id = (String) session.getAttribute("id");
 String nickName = (String) session.getAttribute("nickName");
 
 if (nickName == null) { // 넘어온 값이 null이라면 공백을 넣는다.
