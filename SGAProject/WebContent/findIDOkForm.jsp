@@ -20,7 +20,7 @@ if (foundId == "") {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loginOk</title>
+<title>findID</title>
 </head>
 <body>
 
