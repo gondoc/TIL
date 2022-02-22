@@ -20,6 +20,8 @@ public interface MemberDAO {
 	MemberVO getMember(SqlSession sqlSession, int idx) throws SQLException;
 	//아이디 찾기 select
 	String findId(SqlSession sqlSession, HashMap<String, String> map) throws SQLException;
+	//비밀번호 찾기 select
+	String findPw(SqlSession sqlSession, HashMap<String, String> map) throws SQLException;
 	//비밀번호 검사 
 	int passwordCheck(SqlSession sqlSession, HashMap<String, String> map) throws SQLException;
 	// 아이디 찾기 인증
