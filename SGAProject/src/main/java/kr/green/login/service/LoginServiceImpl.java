@@ -155,7 +155,7 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public String findId(String email, String name, String phone) {
 		// 1. 바뀌는 부분 -- 상단의 로그와 리턴 타입 변수 부분
-		log.debug("findId 호출 : " + email + ", " + name + ", " + ", " + phone);
+		log.debug("findId 호출 : " + email + ", " + name + ", " + phone);
 		String foundId = "";
 		//-----------------------------------------------------------------------
 		SqlSession sqlSession = null;
@@ -187,6 +187,44 @@ public class LoginServiceImpl implements LoginService {
 		// 3. 바뀌는 부분 -- 하단의 로그와 리턴값
 		log.debug("findId 리턴 : " + foundId);
 		return foundId;
+	}
+	
+	@Override
+	public String findPw(String id, String name, String birth, String phone) {
+		// 1. 바뀌는 부분 -- 상단의 로그와 리턴 타입 변수 부분
+		log.debug("findPw 호출 : " + id + ", " + name + ", " + birth + ", " + phone);
+		String foundPw = "";
+		//-----------------------------------------------------------------------
+		SqlSession sqlSession = null;
+		MemberDAO memberDAO = MemberDAOImpl.getInstance();
+//		PersonDAO personDAO = PersonDAOImpl.getInstance();
+		// ------------------------------------------------------------------------------------
+		try {
+			sqlSession = MybatisApp.getSqlSessionFactory().openSession(false);
+			// -----------------------------------------------------------------
+			if (id != null && id != "" && name != null && name != "" && birth != null && birth != "" && phone != null && phone != "") {
+				HashMap<String, String> map = new HashMap<String, String>();
+				map.put("id", id);
+				map.put("name", name);
+				map.put("birth", birth);
+				map.put("phone", phone);
+				if (memberDAO.findPassCheck(sqlSession, map) == 1) {
+					foundPw = memberDAO.findPw(sqlSession, map);
+				}
+			}
+			// -----------------------------------------------------------------
+			sqlSession.commit();
+		} catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null)
+				sqlSession.close();
+		}
+		// ------------------------------------------------------------------------------------
+		// 3. 바뀌는 부분 -- 하단의 로그와 리턴값
+		log.debug("findPw 리턴 : " + foundPw);
+		return foundPw;
 	}
 
 	@Override

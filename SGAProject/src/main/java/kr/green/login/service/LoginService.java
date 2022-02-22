@@ -15,6 +15,8 @@ public interface LoginService {
 	void delete(int idx);
 	// 아이디 찾기
 	String findId(String email, String name, String phone);
+	// 비밀번호 찾기
+	String findPw(String id, String name, String birth, String phone);
 	// 비밀번호 찾기(수정)
 	void updatePassword(MemberVO memberVO);
 	// bmi 값 등록

@@ -52,6 +52,16 @@
 		and phone = #{phone}
 	</select>
 
+	<!-- 06) 아이디 찾기 -->
+	<select id="findPw" parameterType="hashmap" resultType="String">
+		select password from member
+		where
+		id = #{id}
+		and name = #{name}
+		and birth = #{birth}
+		and phone = #{phone}
+	</select>
+
 	<!-- 07) 비밀번호 검사 -->
 	<select id="passwordCheck" parameterType="hashmap" resultType="int">
 		select count(*) from member
@@ -70,10 +80,10 @@
 	<!-- 09) 비밀번호 찾기 인증 -->
 	<select id="findPassCheck" parameterType="hashmap" resultType="int">
 		select count(*) from member
-		where idx=#{idx}
-		and birth = #{birth}
-		and id = #{id}
+		where 
+		id = #{id}
 		and name = #{name}
+		and birth = #{birth}
 		and phone = #{phone}
 	</select>
 
