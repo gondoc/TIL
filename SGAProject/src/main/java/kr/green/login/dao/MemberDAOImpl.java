@@ -42,6 +42,10 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectOne("member.findId", map);
 	}
 	@Override
+	public String findPw(SqlSession sqlSession, HashMap<String, String> map) {
+		return sqlSession.selectOne("member.findPw", map);
+	}
+	@Override
 	public void updatePassword(SqlSession sqlSession, MemberVO memberVO) {
 		sqlSession.update("member.updatePassword", memberVO);
 	}
