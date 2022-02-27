@@ -3,8 +3,8 @@ package secureRandom;
 import java.security.SecureRandom;
 import java.util.Date;
 
-public class GetRamdomPassword {
-	public String getRamdomPassword(int size) {
+public class GetRP {
+	public String getRandomPassword(int size) {
 		char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
 				'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a',
 				'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
