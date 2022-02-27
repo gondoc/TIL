@@ -3,7 +3,7 @@
 <li>카테고리가 중복될 경우 찾아보기 쉽도록 모두 내용을 추가한다.</li>
 <hr>
 
-<li>220211 / <a href="https://github.com/gondoc/TIL/tree/main/SGAProject">건강관리 웹사이트 제작 (진행중)</a> </li>
+<li>220211 / <a href="https://github.com/gondoc/TIL/tree/main/SGAProject">건강관리 웹사이트 제작 (진행중)_스프링시큐리티 공부로 인한 잠시 정지</a> </li>
 <li>220125 / <a href="https://github.com/gondoc/TIL/tree/main/FileBoardMaria">자료실 게시판 제작</a> </li>
 <li>220124 / <a href="https://github.com/gondoc/TIL/tree/main/EmailProject">이메일 전송기능 구현</a> </li>
 <li>220119 / <a href="https://github.com/gondoc/TIL/tree/main/MabatisMariaBoard">댓글형 게시판 제작</a> </li>
